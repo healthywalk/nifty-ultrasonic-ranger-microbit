@@ -8,15 +8,15 @@ namespace NiftyUltrasonicRanger {
     let factorMicrobitV2 = 344 / 10000 / 2
     let factorMicrobitV1 = 1.53 * factorMicrobitV2 //correction
     let _trig: DigitalPin = 0
-    let _pulse: DigitalPin = 0
+    let _echo: DigitalPin = 0
     /**
      * initialize Ultrasonic Ranger
      */
     //% blockId=initializeUltrasonicRanger
-    //% block="initialize sensor trigerpin=$trig pulsepin=$pulse"
-    export function initializeUltrasonicRanger(trig: DigitalPin, pulse: DigitalPin): void {
+    //% block="initialize sensor trigerpin=$trig echopin=$echo"
+    export function initializeUltrasonicRanger(trig: DigitalPin, echo: DigitalPin): void {
         _trig = trig
-        _pulse = pulse
+        _echo = echo
         factor = factorMicrobitV2
         if (isMicrobitV1()) factor = factorMicrobitV1
     }
@@ -25,7 +25,7 @@ namespace NiftyUltrasonicRanger {
     //% block="initialize single pin sensor pin=$pin"
     export function initializeSinglePinUltrasonicRanger(pin: DigitalPin): void {
         _trig = pin
-        _pulse = pin
+        _echo = pin
         factor = factorMicrobitV2
         if (isMicrobitV1()) factor = factorMicrobitV1
     }
@@ -60,7 +60,7 @@ namespace NiftyUltrasonicRanger {
         pins.digitalWritePin(_trig, 1)
         control.waitMicros(20)
         pins.digitalWritePin(_trig, 0)
-        duration = pins.pulseIn(_pulse, PulseValue.High, 50000) // Max duration 50 ms
+        duration = pins.pulseIn(_echo, PulseValue.High, 50000) // Max duration 50 ms
         pins.digitalWritePin(_trig, 0)
 
         RangeInCentimeters = duration * factor
@@ -68,7 +68,7 @@ namespace NiftyUltrasonicRanger {
         if (RangeInCentimeters <= 0) RangeInCentimeters = oldRangeInCentimeters
         oldRangeInCentimeters = RangeInCentimeters
 
-        basic.pause(100)
+        basic.pause(50)
 
         return RangeInCentimeters
     }
