@@ -45,6 +45,7 @@ namespace NiftyUltrasonicRanger {
         }
     }
 
+    let oldRangeInCentimeters = 0
     /**
      * measure Range in cm
      */
@@ -64,7 +65,8 @@ namespace NiftyUltrasonicRanger {
 
         RangeInCentimeters = duration * factor
 
-        if (RangeInCentimeters < 0) RangeInCentimeters = 0
+        if (RangeInCentimeters < 0) RangeInCentimeters = oldRangeInCentimeters
+        oldRangeInCentimeters = RangeInCentimeters
 
         basic.pause(100)
 
