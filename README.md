@@ -1,6 +1,5 @@
 ## nifty-ultrasonic-ranger-microbit
 
-
 > Open this page at [https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/](https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/)
 
 ## Summary
