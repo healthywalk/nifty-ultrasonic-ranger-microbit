@@ -3,7 +3,7 @@
  * Available at both Microbit V1.5 and Microbit V2.0
  */
 //% weight=90 color=#1eb0f0 icon="\u2972"
-namespace ADT7410 {
+namespace NiftyUltrasonicRanger {
     let factor = 0
     let factorMicrobitV2 = 344 / 10000 / 2
     let factorMicrobitV1 = 1.53 * factorMicrobitV2 //correction
