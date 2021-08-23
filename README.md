@@ -1,31 +1,54 @@
+## nifty-ultrasonic-ranger-microbit
 
-> このページを開く [https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/](https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/)
 
-## 拡張機能として使用
+> Open this page at [https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/](https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/)
 
-このリポジトリは、MakeCode で **拡張機能** として追加できます。
+## Summary
+This extension supports the Ultrasonic Rangers in __Microbit MakeCode__ programming.
+Available at both Microbit V1.5 and Microbit V2.0.
+This extension automatically fixes the pulse width measurement bug in Microbit V1.5.
+* Grove Ultrasonic Ranger (initialize with single pin)
+* HC-SR04 (initialize with triger pin and echo pin)
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **新しいプロジェクト** をクリックしてください
-* ギアボタンメニューの中にある **拡張機能** をクリックしてください
-* **https://github.com/healthywalk/nifty-ultrasonic-ranger-microbit** を検索してインポートします。
+## Methods
+* Initialize    (Always run at the beginning)
+```
+NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(DigitalPin.P1)
+```
+```
+NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
+```
 
-## このプロジェクトを編集します ![ビルド ステータス バッジ](https://github.com/healthywalk/nifty-ultrasonic-ranger-microbit/workflows/MakeCode/badge.svg)
+* Get Distance as Number
+```
+NiftyUltrasonicRanger.measureincm()
+```
 
-MakeCode でこのリポジトリを編集します。
+## Example
+```blocks
+NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(DigitalPin.P1)
+basic.forever(function () {
+    serial.writeLine(convertToText(NiftyUltrasonicRanger.measureincm()))
+})
+```
+```blocks
+NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
+basic.forever(function () {
+    serial.writeLine(convertToText(NiftyUltrasonicRanger.measureincm()))
+})
+```
 
-* [https://makecode.microbit.org/](https://makecode.microbit.org/) を開く
-* **読み込む** をクリックし、 **URLから読み込む...** をクリックしてください
-* **https://github.com/healthywalk/nifty-ultrasonic-ranger-microbit** を貼り付けてインポートをクリックしてください
+## Use as Extension
 
-## ブロックのプレビュー
+This repository can be added as an **extension** in MakeCode.
 
-この画像はマスター内の最後のコミットからのブロックコードを示しています。
-このイメージは更新に数分かかる場合があります。
+* open [https://makecode.microbit.org/](https://makecode.microbit.org/)
+* click on **New Project**
+* click on **Extensions** under the gearwheel menu
+* search for **https://github.com/healthywalk/nifty-ultrasonic-ranger-microbit**  and import
 
-![生成されたブロック](https://github.com/healthywalk/nifty-ultrasonic-ranger-microbit/raw/master/.github/makecode/blocks.png)
 
-#### メタデータ (検索、レンダリングに使用)
+## Metadata (used for search, rendering)
 
 * for PXT/microbit
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
