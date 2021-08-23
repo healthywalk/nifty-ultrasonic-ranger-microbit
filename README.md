@@ -4,9 +4,9 @@
 > Open this page at [https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/](https://healthywalk.github.io/nifty-ultrasonic-ranger-microbit/)
 
 ## Summary
-This extension supports the Ultrasonic Rangers in __Microbit MakeCode__ programming.
-Available at both Microbit V1.5 and Microbit V2.0.
-This extension automatically fixes the pulse width measurement bug in Microbit V1.5.
+This extension supports the Ultrasonic Rangers in __Microbit MakeCode__ programming.  
+Available at both Microbit V1.5 and Microbit V2.0.  
+This extension automatically fixes the pulse width measurement bug in Microbit V1.5.  
 * Grove Ultrasonic Ranger (initialize with single pin)
 * HC-SR04 (initialize with triger pin and echo pin)
 
@@ -15,9 +15,12 @@ This extension automatically fixes the pulse width measurement bug in Microbit V
 ```
 NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(DigitalPin.P1)
 ```
+P1 is Triger and echo Pin.
+
 ```
 NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
 ```
+P1 is triger Pin and P2 is echo Pin.
 
 * Get Distance as Number
 ```
