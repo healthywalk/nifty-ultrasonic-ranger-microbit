@@ -15,12 +15,12 @@ This extension automatically fixes the pulse width measurement bug in Microbit V
 ```
 NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(DigitalPin.P1)
 ```
-P1 is Triger and echo Pin.
+P1 is for Triger and echo.  
 
 ```
 NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
 ```
-P1 is triger Pin and P2 is echo Pin.
+P1 is for triger, and P2 is for echo.  
 
 * Get Distance as Number
 ```
