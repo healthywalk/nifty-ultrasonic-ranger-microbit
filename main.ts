@@ -65,7 +65,7 @@ namespace NiftyUltrasonicRanger {
 
         RangeInCentimeters = duration * factor
 
-        if (RangeInCentimeters < 0) RangeInCentimeters = oldRangeInCentimeters
+        if (RangeInCentimeters <= 0) RangeInCentimeters = oldRangeInCentimeters
         oldRangeInCentimeters = RangeInCentimeters
 
         basic.pause(100)
