@@ -66,7 +66,7 @@ namespace NiftyUltrasonicRanger {
 
         if (RangeInCentimeters < 0) RangeInCentimeters = 0
 
-        basic.pause(50)
+        basic.pause(100)
 
         return RangeInCentimeters
     }
