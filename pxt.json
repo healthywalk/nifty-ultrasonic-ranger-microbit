@@ -3,9 +3,7 @@
     "version": "1.0.0",
     "description": "the Ultrasonic Rangers(Grove, HC-SR04) in Microbit MakeCode. Available at both Microbit V1.5 and Microbit V2.0",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.ts",
