@@ -12,15 +12,15 @@ This extension automatically fixes the pulse width measurement bug in Microbit V
 ## Methods
 * Initialization    (Always run at the beginning)
 ```
-NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(DigitalPin.P1) 
+NiftyUltrasonicRanger.initializeSinglePinUltrasonicRanger(pin: DigitalPin) 
 ```
--- P1 is for Triger and echo. 
+-- *pin* is for Triger and echo. 
 
 * alternative Initialization 
 ```
-NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
+NiftyUltrasonicRanger.initializeUltrasonicRanger(trig: DigitalPin, echo: DigitalPin)
 ```
--- P1 is for triger, and P2 is for echo.  
+-- *trig* is for triger, and *echo* is for echo.  
 
 * Get Distance in cm
 ```
@@ -34,6 +34,7 @@ basic.forever(function () {
     serial.writeLine(convertToText(NiftyUltrasonicRanger.measureincm()))
 })
 ```
+
 ```blocks
 NiftyUltrasonicRanger.initializeUltrasonicRanger(DigitalPin.P1, DigitalPin.P2)
 basic.forever(function () {
