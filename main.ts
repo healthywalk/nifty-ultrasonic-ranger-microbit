@@ -62,7 +62,7 @@ namespace NiftyUltrasonicRanger {
         pins.digitalWritePin(_trig, 0)
         duration = pins.pulseIn(_echo, PulseValue.High, 50000) // Max duration 50 ms
         pins.digitalWritePin(_trig, 0)
-        RangeInCentimeters = duration * factor
+        RangeInCentimeters = Math.round(duration * factor * 10) / 10
 
         basic.pause(50)
         return RangeInCentimeters
